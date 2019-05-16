@@ -3,7 +3,6 @@ require_once "privado/cargartodo.php";
 
 if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
     $respuesta = Usuario::iniciarSesion($_POST["correo"], $_POST["contrasenia"]);
-    var_dump($respuesta);
     switch ($respuesta) {
         case Usuario::EXITO:
             header("Location: principalusuario.php");
@@ -13,7 +12,7 @@ if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
             header("Location: index.php");
             break;
         case Usuario::USUARIO_INACTIVO:
-            Aplicacion::establecerMensajeAviso("Tu cuenta se encuentra deshabilitada. Favor de contactar con el administrador del sistema, o el encargado de su departamento.");
+            Aplicacion::establecerMensajeError("Tu cuenta se encuentra deshabilitada. Favor de contactar con el administrador del sistema, o el encargado de su departamento.");
             header("Location: index.php");
             break;
     }    

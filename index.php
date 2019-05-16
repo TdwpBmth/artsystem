@@ -38,11 +38,6 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
             echo 'alert("ERROR: '. $mensajeError.'")';
             echo '</script>';
         }
-        if (isset($mensajeAviso)) {
-            echo '<script language="javascript">';
-            echo 'alert("AVISO: '. $mensajeAviso.'")';
-            echo '</script>';
-        }
     ?>
 </body>
 </html>
