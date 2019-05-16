@@ -13,7 +13,7 @@ class Archivo{
     const DATOS_VACIOS=-7;
     const USUARIO_INACTIVO=-8;
 
-    
+
 
     public static function iniciarSesion($correo, $contrasenia){
         $resultado=self::EXITO;
@@ -27,7 +27,8 @@ class Archivo{
         $stmt->bind_result($tipoUsuario, $nombreCompleto, $activo, $contraseniaBD);
         $huboRegistros = $stmt->fetch();
         $stmt->close();
-        if (!$huboRegistros && password_verify($contrasenia, $contraseniaBD )) {
+        var_dump($huboRegistros);
+        if (!$huboRegistros || password_verify($contrasenia, $contraseniaBD )) {
             $resultado=self::DATOS_INCORRECTOS;
         } else if(!$activo){
             $resultado=self::USUARIO_INACTIVO;

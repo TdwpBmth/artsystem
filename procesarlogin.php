@@ -3,7 +3,7 @@ require_once "privado/cargartodo.php";
 
 if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
     $respuesta = Archivo::iniciarSesion($_POST["correo"], $_POST["contrasenia"]);
-
+    var_dump($respuesta);
     switch ($respuesta) {
         case Archivo::EXITO:
             header("Location: principalusuario.php");
@@ -18,6 +18,6 @@ if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
             break;
     }    
 } else {
-    Aplicacion::establecerMensajeError("Ups, datos incompletos.");
+    Aplicacion::establecerMensajeError("Favor de llenar todos los campos.");
     header("Location: login.php");
 }

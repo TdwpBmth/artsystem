@@ -1,3 +1,9 @@
+<?php
+require_once "privado/cargartodo.php";
+$mensajeExito = Aplicacion::obtenerMensajeExito();
+$mensajeError = Aplicacion::obtenerMensajeError();
+$mensajeAviso = Aplicacion::obtenerMensajeAviso();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +27,7 @@
         }
         if (isset($mensajeAviso)) {
             echo '<script language="javascript">';
-            echo 'alert("AVISO: '. $mensajeExito.'")';
+            echo 'alert("AVISO: '. $mensajeAviso.'")';
             echo '</script>';
         }
     ?>
@@ -29,7 +35,6 @@
         <div id="logo"></div>
     </header>
     <section>
-        
         <div id="login">
             <img src="img/sesion.png">
             <form action="procesarlogin.php" method="POST">
