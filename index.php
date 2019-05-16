@@ -8,6 +8,23 @@
     <title>Login</title>
 </head>
 <body>
+<?php
+			if (isset($mensajeExito)) {
+                echo '<script language="javascript">';
+                echo 'alert("EXITO: '. $mensajeExito.'")';
+                echo '</script>';
+			}
+			if (isset($mensajeError)) {
+				echo '<script language="javascript">';
+                echo 'alert("ERROR: '. $mensajeError.'")';
+                echo '</script>';
+			}
+			if (isset($mensajeAviso)) {
+				echo '<script language="javascript">';
+                echo 'alert("AVISO: '. $mensajeExito.'")';
+                echo '</script>';
+			}
+		?>
     <header>
         <div id="logo"></div>
     </header>

@@ -1,20 +1,20 @@
 <?php
 require_once "php/cargartodo.php";
 
-if (isset($_POST["txtCorreo"]) && isset($_POST["txtPassword"])) {
-    $respuesta = Usuario::iniciarSesion($_POST["txtCorreo"], $_POST["txtPassword"]);
+if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
+    $respuesta = archivo::iniciarSesion($_POST["correo"], $_POST["contrasenia"]);
 
     switch ($respuesta) {
         case Usuario::EXITO:
             header("Location: principalusuario.php");
             break;
         case Usuario::DATOS_INCORRECTOS:
-            Aplicacion::establecerMensajeError("Ups, parece que tus datos están incorrectos.");
-            header("Location: login.php");
+            Aplicacion::establecerMensajeError("No se encontró ninguna cuenta relacionada con las credenciales introducidas. Favor de verificarlas.");
+            header("Location: index.php");
             break;
-        case Usuario::USUARIO_NO_VERIFICADO:
-            Aplicacion::establecerMensajeAviso("Tu cuenta no se encuentra verificada, favor de revisar tu correo electrónico o registrarte de nuevo.");
-            header("Location: registro.php");
+        case Usuario::USUARIO_INACTIVO:
+            Aplicacion::establecerMensajeAviso("Tu cuenta se encuentra deshabilitada. Favor de contactar con el administrador del sistema, o el encargado de su departamento.");
+            header("Location: index.php");
             break;
     }    
 } else {
