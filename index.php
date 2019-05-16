@@ -36,17 +36,10 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
     </header>
     <section>
         <div id="login">
-<<<<<<< HEAD
             <img src="img/sesion.png">
             <form action="procesarlogin.php" method="POST">
                <p><input name="correo" type="mail" placeholder="correo@correo.com"></p> 
                 <p><input  name="contrasenia" type="password" placeholder="Contraseña"> </p> 
-=======
-            <img src="img/sesion.png" >
-            <form action="php/procesarlogin.php" method="POST">
-               <p><input name="correo" type="mail" placeholder="correo@correo.com" required></p> 
-                <p><input  name="contrasenia" type="password" placeholder="Contraseña" required> </p> 
->>>>>>> 4d79b60a1fa837836defd06ff319f1bbb4741f87
                 <input class="btningresar" type="submit" value="Ingresar">
             </form>
         </div>
