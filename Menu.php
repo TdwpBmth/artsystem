@@ -5,6 +5,7 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
+  width:100%;
 }
 
 .sidenav {
