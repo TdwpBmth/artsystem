@@ -14,10 +14,10 @@
     <section>
         
         <div id="login">
-            <img src="img/sesion.png">
-            <form action="" method="POST">
-               <p><input name="correo" type="mail" placeholder="correo@correo.com"></p> 
-                <p><input  name="contrasenia" type="password" placeholder="Contraseña"> </p> 
+            <img src="img/sesion.png" >
+            <form action="php/procesarlogin.php" method="POST">
+               <p><input name="correo" type="mail" placeholder="correo@correo.com" required></p> 
+                <p><input  name="contrasenia" type="password" placeholder="Contraseña" required> </p> 
                 <input class="btningresar" type="submit" value="Ingresar">
             </form>
         </div>
