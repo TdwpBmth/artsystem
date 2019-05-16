@@ -14,6 +14,19 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
     <title>Login</title>
 </head>
 <body>
+    <header>
+        <div id="logo"></div>
+    </header>
+    <section>
+        <div id="login">
+            <img src="img/sesion.png">
+            <form action="procesarlogin.php" method="POST">
+               <p><input name="correo" type="mail" placeholder="correo@correo.com"></p> 
+                <p><input  name="contrasenia" type="password" placeholder="Contraseña"> </p> 
+                <input class="btningresar" type="submit" value="Ingresar">
+            </form>
+        </div>
+    </section>
     <?php
         if (isset($mensajeExito)) {
             echo '<script language="javascript">';
@@ -31,18 +44,5 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
             echo '</script>';
         }
     ?>
-    <header>
-        <div id="logo"></div>
-    </header>
-    <section>
-        <div id="login">
-            <img src="img/sesion.png">
-            <form action="procesarlogin.php" method="POST">
-               <p><input name="correo" type="mail" placeholder="correo@correo.com"></p> 
-                <p><input  name="contrasenia" type="password" placeholder="Contraseña"> </p> 
-                <input class="btningresar" type="submit" value="Ingresar">
-            </form>
-        </div>
-    </section>
 </body>
 </html>
