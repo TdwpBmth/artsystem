@@ -9,8 +9,6 @@ include("php_file_tree.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="../css/principal.css">
-    <script src="dropzone.js"></script>
-    <script src="php_file_tree.js"></script>
     <link rel="stylesheet" href="../css/dropzone.css">
 
 </head>
@@ -34,7 +32,7 @@ include("php_file_tree.php");
         </section>
         <section id="drop">
             <div >
-                <form action="/upload-target" class="dropzone drop">
+                <form action="upload.php" class="dropzone" id="myDrop">
                     <div class="dz-default dz-message">
                         <span>Arrastre archivos para subir</span>
                     </div> 
@@ -54,6 +52,10 @@ include("php_file_tree.php");
             });
         }
     </script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="php_file_tree.js"></script>
     
 </body>
 </html>
