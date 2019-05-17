@@ -6,7 +6,7 @@
     <title>Registro</title>
 </head>
 <body>
-    <header>Registro</header>
+    <!--<header>Registro</header>-->
     <section>
         <div id="registro">
             <form action="procesarregistro.php" method="POST">
@@ -15,9 +15,17 @@
                 <label for="password"><b>Contraseña</b></label>
                 <p><input name="password" type="password" placeholder="password" required></p>
                 <label for="departamento"><b>Departamento</b></label>
+                <p><select name="departamento">
                 <?php
+                    require_once "cargartodo.php";
+                    require_once "departamento.php";
+                    $listaDepartamentos=Departamento::cargarDepartamentos();
+                    foreach ($listaDepartamentos as $departamento) {
+                        echo "<option value='".$departamento."'>".$departamento."</option>";
+                    }
 
                 ?>
+                </select></p>
                 <label for="equipo"><b>Equipo</b></label>
                 <p><input name="equipo" type="number" placeholder="1" required></p>
                 <label for="tipoUsuario"><b>Tipo de Usuario</b></label>

@@ -1,5 +1,5 @@
 <?php
-require_once "privado/cargartodo.php";
+require_once "cargartodo.php";
 
 if (isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
     $respuesta = Usuario::iniciarSesion($_POST["correo"], $_POST["contrasenia"]);

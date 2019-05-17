@@ -20,7 +20,7 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
     <section>
         <div id="login">
             <img src="img/sesion.png">
-            <form action="procesarlogin.php" method="POST">
+            <form action="privado/procesarlogin.php" method="POST">
                <p><input name="correo" type="mail" placeholder="correo@correo.com"></p> 
                 <p><input  name="contrasenia" type="password" placeholder="Contraseña"> </p> 
                 <input class="btningresar" type="submit" value="Ingresar">

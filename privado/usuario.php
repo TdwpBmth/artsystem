@@ -12,6 +12,7 @@ class Usuario{
     public $tipoUsuario;
     public $nombreCompleto;
     public $fechaAlta;
+    public $activo;
 
     
     const ERROR=-1;
@@ -23,7 +24,7 @@ class Usuario{
     const DATOS_VACIOS=-7;
     const USUARIO_INACTIVO=-8;
 
-    public function __construct($correo,$password,$departamento,$equipo,$tipoUsuario,$nombreCompleto,$fechaAlta){
+    public function __construct($correo, $password, $departamento, $equipo, $tipoUsuario, $nombreCompleto, $fechaAlta, $activo){
         $this->correo=$correo;
         $this->password=$password;
         $this->departamento=$departamento;
@@ -31,6 +32,7 @@ class Usuario{
         $this->tipoUsuario=$tipoUsuario;
         $this->nombreCompleto=$nombreCompleto;
         $this->fechaAlta=$fechaAlta;
+        $this->activo=$activo;
     }
 
     public static function iniciarSesion($correo, $contrasenia){
@@ -38,7 +40,6 @@ class Usuario{
         $conexion = Bd::obtenerConexion();
         $correo=$_POST['correo'];
         $contrasenia = $_POST['contrasenia'];
-        Aplicacion::establecerMensajeAviso($contrasenia);
         $stmt = $conexion->prepare("SELECT vTipoUsuario, vNombreCompleto, iActivo, vPassword FROM tUsuario WHERE vCorreo = ?");
         $stmt->bind_param('s', $correo);
         $stmt->execute();
@@ -69,9 +70,9 @@ class Usuario{
 
         $stmt=$conexion->prepare("INSERT INTO tUsuario(vCorreo, vPassword, vDepartamento, iEquipo, vTipoUsuario, vNombreCompleto, dFechaAlta, iActivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $contrasenia=hash("sha512",$this->password);
-        $stmt->bind_param('sssisssi', $this->correo, $this->password, $this->departamento, $this->equipo, $this->tipoUsuario, $this->nombreCompleto, $this->fechaAlta, 1);
-
+        $stmt->bind_param('sssisssi', $this->correo, $contrasenia, $this->departamento, $this->equipo, $this->tipoUsuario, $this->nombreCompleto, $this->fechaAlta, $this->activo);
         if(!$stmt->execute()){
+            $resultado=self::ERROR;
             if ($conexion->errno == 1062) {
                 $resultado = self::CORREO_DUPLICADO;
             }
