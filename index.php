@@ -14,10 +14,13 @@ $mensajeAviso = Aplicacion::obtenerMensajeAviso();
     <title>Login</title>
 </head>
 <body>
-    <header>
-        <div id="logo"></div>
+<header>
+         
+            <img id="logo" src="img/logo.png" >
+        
     </header>
     <section>
+    
         <div id="login">
             <img src="img/sesion.png">
             <form action="privado/procesarlogin.php" method="POST">
