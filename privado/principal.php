@@ -64,7 +64,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="../css/principal.css">
 </head>
 
@@ -75,40 +74,6 @@
     </header>
     <div id="contenedor">
         <div id="nav" class="noSeleccionable">
-            <ul id="myUL">
-                <li><span class="caret">Carpeta principal</span>
-                    <ul class="nested">
-                        <li>archivo</li>
-                        <li><span class="caret">Subcarpeta</span>
-                            <ul class="nested">
-                                <li>Archivo</li>
-                                <li><span class="caret">Subcarpeta de sub</span>
-                                    <ul class="nested">
-                                        <li>Pi Lo Chun</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <ul id="myUL">
-                <li><span class="caret">Carpeta principal</span>
-                    <ul class="nested">
-                        <li>archivo</li>
-                        <li><span class="caret">Subcarpeta</span>
-                            <ul class="nested">
-                                <li>Archivo</li>
-                                <li><span class="caret">Subcarpeta de sub</span>
-                                    <ul class="nested">
-                                        <li>Pi Lo Chun</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
             <?php
                  
                 $rutas=new listaRutas();
@@ -125,14 +90,9 @@
 
         <section id="main" class="noSeleccionable">
             <div class="grid-container">
-                <div class="grid-item"><img src="img/documentos/Excel.png" class="iconoDocumento">
-                    <p>nombre.docx</p>
                 <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento">
                     <p>nombre.xls</p>
                 </div>
-                <div class="grid-item"><img src="img/documentos/Word.png" class="iconoDocumento"></div>
-                <div class="grid-item"><img src="img/documentos/Excel.png" class="iconoDocumento"></div>
-                <div class="grid-item"><img src="img/documentos/Excel.png" class="iconoDocumento"></div>
                 <div class="grid-item"><img src="../img/documentos/Word.png" class="iconoDocumento"></div>
                 <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento"></div>
                 <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento"></div>
