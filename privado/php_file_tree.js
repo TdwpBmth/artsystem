@@ -10,8 +10,17 @@ function init_php_file_tree() {
 				if (submenu[j].tagName == "A") {
 					
 					submenu[j].onclick = function() {
+						console.log(this.getAttribute("data-ruta"));
+						var rutaCarpeta=this.getAttribute("data-ruta");
+						var xmlhttp = new XMLHttpRequest();
+						xmlhttp.onreadystatechange = function() {
+							if (this.readyState == 4 && this.status == 200) {
+								document.getElementById("aaa").innerHTML=this.responseText;
+							}
+						};
+						xmlhttp.open("GET","cargarContenido.php?ruta="+rutaCarpeta,true);
+						xmlhttp.send();
 						var node = this.nextSibling;
-											
 						while (1) {
 							if (node != null) {
 								if (node.tagName == "UL") {

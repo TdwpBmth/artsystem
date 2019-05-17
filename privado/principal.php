@@ -25,11 +25,11 @@ include("php_file_tree.php");
             <?php
 		        echo php_file_tree("BlueDLS/", "");
             ?>
-            
         </div>
 
         <section id="main" class="noSeleccionable">
-            <div class="grid-container">
+            <div class="grid-container" id="aaa">
+
             </div>
         </section>
         <section id="drop">
@@ -54,8 +54,6 @@ include("php_file_tree.php");
             });
         }
     </script>
-    <script></script>
+    
 </body>
-
-
 </html>
