@@ -1,61 +1,5 @@
 <?php
-    require_once "cargartodo.php";   
-
-    class listaRutas{
-        protected $stack;
-        protected $limit;
-        
-        public function __construct($limit = 999) {
-            $this->stack = array();
-            $this->limit = $limit;
-        }
-
-        public function push($item) {
-            // trap for stack overflow
-            if (count($this->stack) < $this->limit) {
-                // prepend item to the start of the array
-                array_unshift($this->stack, $item);
-            } else {
-                throw new RunTimeException('Stack is full!'); 
-            }
-        }
-
-        public function pop() {
-            if ($this->isEmpty()) {
-                // trap for stack underflow
-              throw new RunTimeException('Stack is empty!');
-          } else {
-                // pop item from the start of the array
-                return array_shift($this->stack);
-            }
-        }
-
-        public function top() {
-            return current($this->stack);
-        }
-    
-        public function isEmpty() {
-            return empty($this->stack);
-        }
-
-    }
-
-    function cargarDocumentos($contador, $rutas){
-        $contador++;
-        $archivos=scandir($rutas->top());
-        foreach($archivos as $archivo){
-            if ($archivo === '.' or $archivo === '..') continue;
-            if (is_dir($rutas->top() . '/' . $archivo)) {
-                $rutas->push($rutas->top().'/'.$archivo);
-                echo "<ul class='nested'>";
-                echo "<li><span class='caret'>".$rutas->top()."</span>";
-                cargarDocumentos($contador,$rutas);
-                echo "</li>";
-                echo "</ul>";
-                $rutas->pop();
-            }
-        }
-    }
+include("php_file_tree.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -75,15 +19,7 @@
     <div id="contenedor">
         <div id="nav" class="noSeleccionable">
             <?php
-                 
-                $rutas=new listaRutas();
-                $rutas->push("BlueDLS");
-                 echo "<ul id='myUL'>";
-                 echo "<li><span class='caret'>BlueDLS</span>";
-                     cargarDocumentos(0,$rutas);
-                 echo "</li>";
-                 echo "</ul>";
-
+		        echo php_file_tree("BlueDLS/", "");
             ?>
             
         </div>
