@@ -82,4 +82,8 @@ class Usuario{
 
     }
 
+    public function cargarUsuarios(){
+        
+    }
+
 }

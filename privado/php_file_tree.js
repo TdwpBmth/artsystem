@@ -10,7 +10,6 @@ function init_php_file_tree() {
 				if (submenu[j].tagName == "A") {
 					
 					submenu[j].onclick = function() {
-						console.log(this.getAttribute("data-ruta"));
 						var rutaCarpeta=this.getAttribute("data-ruta");
 						var xmlhttp = new XMLHttpRequest();
 						xmlhttp.onreadystatechange = function() {
