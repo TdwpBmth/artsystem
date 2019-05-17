@@ -29,6 +29,18 @@ class Departamento{
         return $listaDepartamentos;
     }
 
+    public static function cargarDepartamentosTodo(){
+        $listaDepartamentos=array();
+        $conexion = Bd::obtenerConexion();
+        $stmt = "SELECT vNombre, vEncargado FROM tDepartamento";
+        $result=$conexion->query($stmt);
+        while($row=$result->fetch_assoc()){
+            $departamento=array($row['vNombre'],$row['vEncargado']);
+            array_push($listaDepartamentos, $departamento);
+        }
+        return $listaDepartamentos;
+    }
+
     public function registrarDepartamento(){
         $resultado=self::EXITO;
         $conexion=bd::obtenerConexion();

@@ -8,6 +8,6 @@ foreach($archivos as $archivo){
     if (is_dir($ruta . '/' . $archivo)) {
     }else{
         $ext = substr($archivo, strrpos($archivo, ".") + 1);
-        echo "<div class='grid-item'><img src='../img/documentos/".$ext.".png' class='iconoDocumento'><div>".$archivo."</div></div>";
+        echo "<a href='".$ruta."/".$archivo."'><div class='grid-item'><img src='../img/documentos/".$ext.".png' class='iconoDocumento'><div>".$archivo."</div></div></a>";
     }
 }
