@@ -9,12 +9,10 @@ include("php_file_tree.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="../css/principal.css">
-<<<<<<< HEAD
     <script src="dropzone.js"></script>
+    <script src="php_file_tree.js"></script>
     <link rel="stylesheet" href="../css/dropzone.css">
 
-=======
->>>>>>> c1360b001ca3729521a74a06592aa631ff2f3560
 </head>
 
 <body>
@@ -24,32 +22,14 @@ include("php_file_tree.php");
     </header>
     <div id="contenedor">
         <div id="nav" class="noSeleccionable">
-<<<<<<< HEAD
-=======
             <?php
 		        echo php_file_tree("BlueDLS/", "");
             ?>
             
->>>>>>> c1360b001ca3729521a74a06592aa631ff2f3560
         </div>
 
         <section id="main" class="noSeleccionable">
             <div class="grid-container">
-                <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento">
-<<<<<<< HEAD
-                    <p>nombre.docx</p>
-=======
-                    <p>nombre.xls</p>
->>>>>>> c1360b001ca3729521a74a06592aa631ff2f3560
-                </div>
-                <div class="grid-item"><img src="../img/documentos/Word.png" class="iconoDocumento"></div>
-                <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento"></div>
-                <div class="grid-item"><img src="../img/documentos/Excel.png" class="iconoDocumento"></div>
-                <div class="grid-item">5</div>
-                <div class="grid-item">6</div>
-                <div class="grid-item">7</div>
-                <div class="grid-item">8</div>
-                <div class="grid-item">9</div>
             </div>
         </section>
         <section id="drop">
